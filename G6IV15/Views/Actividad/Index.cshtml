@@ -1,0 +1,26 @@
+﻿<!-- class: define el diseño al elemento/etiqueta
+al que le aplicamos -->
+<table class="table">
+    <!-- thead: Define la cabecera de la tabla -->
+    <thead class="thead-dark">
+        <tr>
+            <!-- th define las columnas de la cabecera -->
+            <th>ID</th>
+            <th>Descripción</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <!-- tbody define el cuerpo de la tabla -->
+    <tbody>
+        <!-- tr define la filas del cuerpo -->
+        <!-- foreach recorrer una lista/arreglo o colección -->
+        @foreach (G6IV15.Models.Actividad item in ViewBag.Actividades)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Descripcion</td>
+                <td>@item.Estado</td>
+            </tr>
+        }
+    </tbody>
+</table>

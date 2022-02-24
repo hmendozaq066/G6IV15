@@ -11,6 +11,7 @@ namespace G6IV15.Controllers
 {
     public class HomeController : Controller
     {
+        //Gitgub
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)

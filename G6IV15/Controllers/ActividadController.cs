@@ -10,11 +10,27 @@ namespace G6IV15.Controllers
     {
         //Una instancia privada de tipo Lista, que va almacenar
         //objetos de tipo Actividad
-        private List<Actividad> _actividades = new List<Actividad>();
+        private static List<Actividad> _actividades = new List<Actividad>();
         public IActionResult Index()
         {
             ViewBag.Actividades = _actividades;
             return View();
+        }
+
+        public IActionResult Agregar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Agregar(int ID, string Descripcion, int Estado)
+        {
+            var actividad = new Actividad();    
+            actividad.ID = ID;
+            actividad.Descripcion = Descripcion;
+            actividad.Estado = Estado;
+            _actividades.Add(actividad);
+            return RedirectToAction("Index");
         }
     }
 }
